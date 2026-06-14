@@ -164,13 +164,13 @@ body{font-family:'Jost',sans-serif;background:radial-gradient(ellipse at 50% 25%
 <canvas id="starc"></canvas>
 <div class="petal-field" id="petalField"></div>
 <button class="music-btn" id="musicBtn">♪</button>
-<audio id="bgm" preload="auto" src="assets/song.mp3"></audio>
+<audio id="bgm" preload="auto" src="song.mp3"></audio>
 
 <!-- LOCK -->
 <div id="lock">
   <div class="lock-top">
     <div class="lock-photo">
-      <div class="pic"><img src="assets/7.jpg" onerror="this.style.display='none';this.parentElement.innerHTML='📷'"></div>
+      <div class="pic"><img src="7.jpg" onerror="this.style.display='none';this.parentElement.innerHTML='📷'"></div>
       <div class="cap">unlock me ♡</div>
     </div>
     <div class="closed-book">
@@ -329,10 +329,10 @@ Happy birthday, my love. You deserve the whole world, twice. ♡`;
 const PAGES=[
   {cover:true,html:`<div class="k">a keepsake for</div><div class="gold">Sarsoura</div><div class="big">Happy Birthday</div><div class="tap">turn the page ▶</div>`},
   {html:`<div class="k2">chapter one</div><div class="title">about you</div><div class="bodytext">The most unique person I have ever known — the prettiest eyes, the kindest heart, and a laugh I would cross the world to hear.</div>`},
-  {html:`<img class="pphoto" src="assets/4.jpg"><div class="cap">that smile of yours ☀</div>`},
+  {html:`<img class="pphoto" src="4.jpg"><div class="cap">that smile of yours ☀</div>`},
   {letter:true,html:`<div class="k2">chapter two</div><div class="title">my letter</div><div class="typed" id="typed"></div>`},
-  {html:`<img class="pphoto" src="assets/9.jpg"><div class="cap">my whole heart ♡</div>`},
-  {html:`<img class="pphoto" src="assets/12.jpg"><div class="cap">golden hour ✨</div>`},
+  {html:`<img class="pphoto" src="9.jpg"><div class="cap">my whole heart ♡</div>`},
+  {html:`<img class="pphoto" src="12.jpg"><div class="cap">golden hour ✨</div>`},
   {wish:true,html:`<div class="k2">chapter three</div><div class="title">make a wish</div><div class="bodytext">29 candles, one wish, and a whole year of beautiful things ahead of you.</div><button class="wishbtn" id="goWish">🎂 light the candles</button>`},
   {finale:true,html:`<div class="title" style="font-size:60px">Happy Birthday</div><div class="cap" style="font-size:38px">I love you, Sara ♡</div><button class="membtn" id="goMem">✦ open our memory wall</button>`}
 ];
@@ -451,7 +451,7 @@ function decorateCelebrate(){
   ]);
 }
 function startFinale(){if(finaleDone)return;finaleDone=true;$('#finale').classList.add('on');fireworks($('#fwf'));balloons(28);buildHeart();scatterHearts();
-const g=$('#mgrid');MEM.forEach(([n,c],i)=>{const d=document.createElement('div');d.className='mc';d.dataset.src='assets/'+n+'.jpg';d.dataset.cap=c;d.innerHTML=`<img src="assets/${n}.jpg"><div class="c">${c}</div>`;d.addEventListener('click',()=>openLbx(d.dataset.src,d.dataset.cap));g.appendChild(d);setTimeout(()=>d.classList.add('in'),300+i*160)})}
+const g=$('#mgrid');MEM.forEach(([n,c],i)=>{const d=document.createElement('div');d.className='mc';d.dataset.src=''+n+'.jpg';d.dataset.cap=c;d.innerHTML=`<img src="${n}.jpg"><div class="c">${c}</div>`;d.addEventListener('click',()=>openLbx(d.dataset.src,d.dataset.cap));g.appendChild(d);setTimeout(()=>d.classList.add('in'),300+i*160)})}
 
 /* lightbox */
 const lbx=$('#lbx');
